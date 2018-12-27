@@ -24,5 +24,7 @@
     "test": "true"
   },
   "main": "server/server.js",
-  "dependencies": {}
+  "dependencies": {
+    "loopback-connector-mongodb": "3.9.2"
+  }
 }

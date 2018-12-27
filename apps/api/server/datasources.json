@@ -12,5 +12,16 @@
   "mail": {
     "name": "mail",
     "connector": "mail"
+  },
+  "mongo-atlas-db": {
+    "host": "cluster0-shard-00-01-qezsn.mongodb.net",
+    "port": 27017,
+    "url":
+      "mongodb://admin:ojAQSWXQRPT6slk6@cluster0-shard-00-00-qezsn.mongodb.net:27017,cluster0-shard-00-01-qezsn.mongodb.net:27017,cluster0-shard-00-02-qezsn.mongodb.net:27017/test?ssl=true&replicaSet=Cluster0-shard-0&authSource=admin&retryWrites=true",
+    "database": "mongodb",
+    "password": "ojAQSWXQRPT6slk6",
+    "name": "mongo-atlas-db",
+    "user": "admin",
+    "connector": "mongodb"
   }
 }

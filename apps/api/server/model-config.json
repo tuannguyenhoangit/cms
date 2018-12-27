@@ -1,1 +1,10 @@
-{}
+{
+  "City": {
+    "dataSource": "mongo-atlas-db",
+    "public": true
+  },
+  "Region": {
+    "dataSource": "mongo-atlas-db",
+    "public": true
+  }
+}
