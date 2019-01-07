@@ -4,4 +4,3 @@ dist
 admin/db.json
 *.log
 package-lock.json
-!production.json
