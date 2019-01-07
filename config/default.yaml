@@ -32,5 +32,5 @@ storage:
   path: './storage'
 
 system:
-  initdb: false
+  initdb: true
   migratedb: false

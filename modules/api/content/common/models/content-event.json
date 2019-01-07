@@ -1,7 +1,7 @@
 {
   "name": "ContentEvent",
-  "plural": "ContentEvents",
   "description": "Content: Manage Events in a Domain",
+  "plural": "ContentEvents",
   "base": "ContentBaseModel",
   "properties": {
     "name": {
@@ -14,5 +14,9 @@
     "location": {
       "type": "String"
     }
-  }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
 }

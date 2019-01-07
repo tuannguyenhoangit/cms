@@ -1,7 +1,7 @@
 {
   "name": "ContentProduct",
-  "plural": "ContentProducts",
   "description": "Content: Manage Products in a Domain",
+  "plural": "ContentProducts",
   "base": "ContentBaseModel",
   "properties": {
     "name": {
@@ -20,5 +20,9 @@
       "type": "Number",
       "required": false
     }
-  }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
 }

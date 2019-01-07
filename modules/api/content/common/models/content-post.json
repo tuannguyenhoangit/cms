@@ -1,7 +1,7 @@
 {
   "name": "ContentPost",
-  "plural": "ContentPosts",
   "description": "Content: Manage Posts in a Domain",
+  "plural": "ContentPosts",
   "base": "ContentBaseModel",
   "properties": {
     "title": {
@@ -12,5 +12,9 @@
       "type": "String",
       "required": false
     }
-  }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
 }

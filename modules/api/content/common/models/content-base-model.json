@@ -3,10 +3,10 @@
   "plural": "ContentBaseModel",
   "base": "SystemBaseModel",
   "idInjection": true,
-  "forceId": false,
   "options": {
     "validateUpsert": true
   },
+  "forceId": false,
   "mixins": {
     "StorageFile": {
       "blacklist": ["ContentBaseModel"]
@@ -33,5 +33,9 @@
     "storageFileId": {
       "type": "String"
     }
-  }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
 }

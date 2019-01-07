@@ -1,7 +1,7 @@
 {
   "name": "ContentPage",
-  "plural": "ContentPages",
   "description": "Content: Manage Pages in a Domain",
+  "plural": "ContentPages",
   "base": "ContentBaseModel",
   "properties": {
     "name": {
@@ -11,5 +11,9 @@
     "content": {
       "type": "string"
     }
-  }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
 }

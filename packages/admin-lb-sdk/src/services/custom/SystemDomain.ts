@@ -1,23 +1,22 @@
 /* tslint:disable */
-import { Injectable, Inject, Optional } from '@angular/core';
-import { Http, Response } from '@angular/http';
-import { SDKModels } from './SDKModels';
-import { BaseLoopBackApi } from '../core/base.service';
-import { LoopBackConfig } from '../../lb.config';
-import { LoopBackAuth } from '../core/auth.service';
-import { LoopBackFilter,  } from '../../models/BaseModels';
-import { JSONSearchParams } from '../core/search.params';
-import { ErrorHandler } from '../core/error.service';
-import { Subject } from 'rxjs/Subject';
-import { Observable } from 'rxjs/Rx';
-import { SystemDomain } from '../../models/SystemDomain';
-import { SocketConnection } from '../../sockets/socket.connections';
-import { ContentEvent } from '../../models/ContentEvent';
-import { ContentPage } from '../../models/ContentPage';
-import { ContentProduct } from '../../models/ContentProduct';
-import { ContentPost } from '../../models/ContentPost';
-import { StorageFile } from '../../models/StorageFile';
-
+import { Injectable, Inject, Optional } from '@angular/core'
+import { Http, Response } from '@angular/http'
+import { SDKModels } from './SDKModels'
+import { BaseLoopBackApi } from '../core/base.service'
+import { LoopBackConfig } from '../../lb.config'
+import { LoopBackAuth } from '../core/auth.service'
+import { LoopBackFilter } from '../../models/BaseModels'
+import { JSONSearchParams } from '../core/search.params'
+import { ErrorHandler } from '../core/error.service'
+import { Subject } from 'rxjs/Subject'
+import { Observable } from 'rxjs/Rx'
+import { SystemDomain } from '../../models/SystemDomain'
+import { SocketConnection } from '../../sockets/socket.connections'
+import { ContentEvent } from '../../models/ContentEvent'
+import { ContentPage } from '../../models/ContentPage'
+import { ContentProduct } from '../../models/ContentProduct'
+import { ContentPost } from '../../models/ContentPost'
+import { StorageFile } from '../../models/StorageFile'
 
 /**
  * Api services for the `SystemDomain` model.
@@ -28,16 +27,17 @@ import { StorageFile } from '../../models/StorageFile';
  */
 @Injectable()
 export class SystemDomainApi extends BaseLoopBackApi {
-
   constructor(
     @Inject(Http) protected http: Http,
     @Inject(SocketConnection) protected connection: SocketConnection,
     @Inject(SDKModels) protected models: SDKModels,
     @Inject(LoopBackAuth) protected auth: LoopBackAuth,
     @Inject(JSONSearchParams) protected searchParams: JSONSearchParams,
-    @Optional() @Inject(ErrorHandler) protected errorHandler: ErrorHandler
+    @Optional()
+    @Inject(ErrorHandler)
+    protected errorHandler: ErrorHandler
   ) {
-    super(http,  connection,  models, auth, searchParams, errorHandler);
+    super(http, connection, models, auth, searchParams, errorHandler)
   }
 
   /**
@@ -57,17 +57,17 @@ export class SystemDomainApi extends BaseLoopBackApi {
    * </em>
    */
   public findByIdContentEvents(id: any, fk: any, customHeaders?: Function): Observable<any> {
-    let _method: string = "GET";
-    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/Domains/:id/contentEvents/:fk";
+    let _method: string = 'GET'
+    let _url: string =
+      LoopBackConfig.getPath() + '/' + LoopBackConfig.getApiVersion() + '/Domains/:id/contentEvents/:fk'
     let _routeParams: any = {
       id: id,
-      fk: fk
-    };
-    let _postBody: any = {};
-    let _urlParams: any = {};
-    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
-    return result;
+      fk: fk,
+    }
+    let _postBody: any = {}
+    let _urlParams: any = {}
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders)
+    return result
   }
 
   /**
@@ -84,17 +84,17 @@ export class SystemDomainApi extends BaseLoopBackApi {
    * This method returns no data.
    */
   public destroyByIdContentEvents(id: any, fk: any, customHeaders?: Function): Observable<any> {
-    let _method: string = "DELETE";
-    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/Domains/:id/contentEvents/:fk";
+    let _method: string = 'DELETE'
+    let _url: string =
+      LoopBackConfig.getPath() + '/' + LoopBackConfig.getApiVersion() + '/Domains/:id/contentEvents/:fk'
     let _routeParams: any = {
       id: id,
-      fk: fk
-    };
-    let _postBody: any = {};
-    let _urlParams: any = {};
-    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
-    return result;
+      fk: fk,
+    }
+    let _postBody: any = {}
+    let _urlParams: any = {}
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders)
+    return result
   }
 
   /**
@@ -118,19 +118,19 @@ export class SystemDomainApi extends BaseLoopBackApi {
    * </em>
    */
   public updateByIdContentEvents(id: any, fk: any, data: any = {}, customHeaders?: Function): Observable<any> {
-    let _method: string = "PUT";
-    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/Domains/:id/contentEvents/:fk";
+    let _method: string = 'PUT'
+    let _url: string =
+      LoopBackConfig.getPath() + '/' + LoopBackConfig.getApiVersion() + '/Domains/:id/contentEvents/:fk'
     let _routeParams: any = {
       id: id,
-      fk: fk
-    };
+      fk: fk,
+    }
     let _postBody: any = {
-      data: data
-    };
-    let _urlParams: any = {};
-    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
-    return result;
+      data: data,
+    }
+    let _urlParams: any = {}
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders)
+    return result
   }
 
   /**
@@ -150,17 +150,16 @@ export class SystemDomainApi extends BaseLoopBackApi {
    * </em>
    */
   public findByIdContentPages(id: any, fk: any, customHeaders?: Function): Observable<any> {
-    let _method: string = "GET";
-    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/Domains/:id/contentPages/:fk";
+    let _method: string = 'GET'
+    let _url: string = LoopBackConfig.getPath() + '/' + LoopBackConfig.getApiVersion() + '/Domains/:id/contentPages/:fk'
     let _routeParams: any = {
       id: id,
-      fk: fk
-    };
-    let _postBody: any = {};
-    let _urlParams: any = {};
-    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
-    return result;
+      fk: fk,
+    }
+    let _postBody: any = {}
+    let _urlParams: any = {}
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders)
+    return result
   }
 
   /**
@@ -177,17 +176,16 @@ export class SystemDomainApi extends BaseLoopBackApi {
    * This method returns no data.
    */
   public destroyByIdContentPages(id: any, fk: any, customHeaders?: Function): Observable<any> {
-    let _method: string = "DELETE";
-    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/Domains/:id/contentPages/:fk";
+    let _method: string = 'DELETE'
+    let _url: string = LoopBackConfig.getPath() + '/' + LoopBackConfig.getApiVersion() + '/Domains/:id/contentPages/:fk'
     let _routeParams: any = {
       id: id,
-      fk: fk
-    };
-    let _postBody: any = {};
-    let _urlParams: any = {};
-    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
-    return result;
+      fk: fk,
+    }
+    let _postBody: any = {}
+    let _urlParams: any = {}
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders)
+    return result
   }
 
   /**
@@ -211,19 +209,18 @@ export class SystemDomainApi extends BaseLoopBackApi {
    * </em>
    */
   public updateByIdContentPages(id: any, fk: any, data: any = {}, customHeaders?: Function): Observable<any> {
-    let _method: string = "PUT";
-    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/Domains/:id/contentPages/:fk";
+    let _method: string = 'PUT'
+    let _url: string = LoopBackConfig.getPath() + '/' + LoopBackConfig.getApiVersion() + '/Domains/:id/contentPages/:fk'
     let _routeParams: any = {
       id: id,
-      fk: fk
-    };
+      fk: fk,
+    }
     let _postBody: any = {
-      data: data
-    };
-    let _urlParams: any = {};
-    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
-    return result;
+      data: data,
+    }
+    let _urlParams: any = {}
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders)
+    return result
   }
 
   /**
@@ -243,17 +240,17 @@ export class SystemDomainApi extends BaseLoopBackApi {
    * </em>
    */
   public findByIdContentProducts(id: any, fk: any, customHeaders?: Function): Observable<any> {
-    let _method: string = "GET";
-    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/Domains/:id/contentProducts/:fk";
+    let _method: string = 'GET'
+    let _url: string =
+      LoopBackConfig.getPath() + '/' + LoopBackConfig.getApiVersion() + '/Domains/:id/contentProducts/:fk'
     let _routeParams: any = {
       id: id,
-      fk: fk
-    };
-    let _postBody: any = {};
-    let _urlParams: any = {};
-    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
-    return result;
+      fk: fk,
+    }
+    let _postBody: any = {}
+    let _urlParams: any = {}
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders)
+    return result
   }
 
   /**
@@ -270,17 +267,17 @@ export class SystemDomainApi extends BaseLoopBackApi {
    * This method returns no data.
    */
   public destroyByIdContentProducts(id: any, fk: any, customHeaders?: Function): Observable<any> {
-    let _method: string = "DELETE";
-    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/Domains/:id/contentProducts/:fk";
+    let _method: string = 'DELETE'
+    let _url: string =
+      LoopBackConfig.getPath() + '/' + LoopBackConfig.getApiVersion() + '/Domains/:id/contentProducts/:fk'
     let _routeParams: any = {
       id: id,
-      fk: fk
-    };
-    let _postBody: any = {};
-    let _urlParams: any = {};
-    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
-    return result;
+      fk: fk,
+    }
+    let _postBody: any = {}
+    let _urlParams: any = {}
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders)
+    return result
   }
 
   /**
@@ -304,19 +301,19 @@ export class SystemDomainApi extends BaseLoopBackApi {
    * </em>
    */
   public updateByIdContentProducts(id: any, fk: any, data: any = {}, customHeaders?: Function): Observable<any> {
-    let _method: string = "PUT";
-    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/Domains/:id/contentProducts/:fk";
+    let _method: string = 'PUT'
+    let _url: string =
+      LoopBackConfig.getPath() + '/' + LoopBackConfig.getApiVersion() + '/Domains/:id/contentProducts/:fk'
     let _routeParams: any = {
       id: id,
-      fk: fk
-    };
+      fk: fk,
+    }
     let _postBody: any = {
-      data: data
-    };
-    let _urlParams: any = {};
-    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
-    return result;
+      data: data,
+    }
+    let _urlParams: any = {}
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders)
+    return result
   }
 
   /**
@@ -336,17 +333,16 @@ export class SystemDomainApi extends BaseLoopBackApi {
    * </em>
    */
   public findByIdContentPosts(id: any, fk: any, customHeaders?: Function): Observable<any> {
-    let _method: string = "GET";
-    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/Domains/:id/contentPosts/:fk";
+    let _method: string = 'GET'
+    let _url: string = LoopBackConfig.getPath() + '/' + LoopBackConfig.getApiVersion() + '/Domains/:id/contentPosts/:fk'
     let _routeParams: any = {
       id: id,
-      fk: fk
-    };
-    let _postBody: any = {};
-    let _urlParams: any = {};
-    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
-    return result;
+      fk: fk,
+    }
+    let _postBody: any = {}
+    let _urlParams: any = {}
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders)
+    return result
   }
 
   /**
@@ -363,17 +359,16 @@ export class SystemDomainApi extends BaseLoopBackApi {
    * This method returns no data.
    */
   public destroyByIdContentPosts(id: any, fk: any, customHeaders?: Function): Observable<any> {
-    let _method: string = "DELETE";
-    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/Domains/:id/contentPosts/:fk";
+    let _method: string = 'DELETE'
+    let _url: string = LoopBackConfig.getPath() + '/' + LoopBackConfig.getApiVersion() + '/Domains/:id/contentPosts/:fk'
     let _routeParams: any = {
       id: id,
-      fk: fk
-    };
-    let _postBody: any = {};
-    let _urlParams: any = {};
-    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
-    return result;
+      fk: fk,
+    }
+    let _postBody: any = {}
+    let _urlParams: any = {}
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders)
+    return result
   }
 
   /**
@@ -397,19 +392,18 @@ export class SystemDomainApi extends BaseLoopBackApi {
    * </em>
    */
   public updateByIdContentPosts(id: any, fk: any, data: any = {}, customHeaders?: Function): Observable<any> {
-    let _method: string = "PUT";
-    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/Domains/:id/contentPosts/:fk";
+    let _method: string = 'PUT'
+    let _url: string = LoopBackConfig.getPath() + '/' + LoopBackConfig.getApiVersion() + '/Domains/:id/contentPosts/:fk'
     let _routeParams: any = {
       id: id,
-      fk: fk
-    };
+      fk: fk,
+    }
     let _postBody: any = {
-      data: data
-    };
-    let _urlParams: any = {};
-    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
-    return result;
+      data: data,
+    }
+    let _urlParams: any = {}
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders)
+    return result
   }
 
   /**
@@ -429,17 +423,16 @@ export class SystemDomainApi extends BaseLoopBackApi {
    * </em>
    */
   public findByIdStorageFiles(id: any, fk: any, customHeaders?: Function): Observable<any> {
-    let _method: string = "GET";
-    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/Domains/:id/storageFiles/:fk";
+    let _method: string = 'GET'
+    let _url: string = LoopBackConfig.getPath() + '/' + LoopBackConfig.getApiVersion() + '/Domains/:id/storageFiles/:fk'
     let _routeParams: any = {
       id: id,
-      fk: fk
-    };
-    let _postBody: any = {};
-    let _urlParams: any = {};
-    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
-    return result;
+      fk: fk,
+    }
+    let _postBody: any = {}
+    let _urlParams: any = {}
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders)
+    return result
   }
 
   /**
@@ -456,17 +449,16 @@ export class SystemDomainApi extends BaseLoopBackApi {
    * This method returns no data.
    */
   public destroyByIdStorageFiles(id: any, fk: any, customHeaders?: Function): Observable<any> {
-    let _method: string = "DELETE";
-    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/Domains/:id/storageFiles/:fk";
+    let _method: string = 'DELETE'
+    let _url: string = LoopBackConfig.getPath() + '/' + LoopBackConfig.getApiVersion() + '/Domains/:id/storageFiles/:fk'
     let _routeParams: any = {
       id: id,
-      fk: fk
-    };
-    let _postBody: any = {};
-    let _urlParams: any = {};
-    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
-    return result;
+      fk: fk,
+    }
+    let _postBody: any = {}
+    let _urlParams: any = {}
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders)
+    return result
   }
 
   /**
@@ -490,19 +482,18 @@ export class SystemDomainApi extends BaseLoopBackApi {
    * </em>
    */
   public updateByIdStorageFiles(id: any, fk: any, data: any = {}, customHeaders?: Function): Observable<any> {
-    let _method: string = "PUT";
-    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/Domains/:id/storageFiles/:fk";
+    let _method: string = 'PUT'
+    let _url: string = LoopBackConfig.getPath() + '/' + LoopBackConfig.getApiVersion() + '/Domains/:id/storageFiles/:fk'
     let _routeParams: any = {
       id: id,
-      fk: fk
-    };
+      fk: fk,
+    }
     let _postBody: any = {
-      data: data
-    };
-    let _urlParams: any = {};
-    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
-    return result;
+      data: data,
+    }
+    let _urlParams: any = {}
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders)
+    return result
   }
 
   /**
@@ -522,17 +513,16 @@ export class SystemDomainApi extends BaseLoopBackApi {
    * </em>
    */
   public getContentEvents(id: any, filter: LoopBackFilter = {}, customHeaders?: Function): Observable<any> {
-    let _method: string = "GET";
-    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/Domains/:id/contentEvents";
+    let _method: string = 'GET'
+    let _url: string = LoopBackConfig.getPath() + '/' + LoopBackConfig.getApiVersion() + '/Domains/:id/contentEvents'
     let _routeParams: any = {
-      id: id
-    };
-    let _postBody: any = {};
-    let _urlParams: any = {};
-    if (typeof filter !== 'undefined' && filter !== null) _urlParams.filter = filter;
-    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
-    return result;
+      id: id,
+    }
+    let _postBody: any = {}
+    let _urlParams: any = {}
+    if (typeof filter !== 'undefined' && filter !== null) _urlParams.filter = filter
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders)
+    return result
   }
 
   /**
@@ -554,18 +544,17 @@ export class SystemDomainApi extends BaseLoopBackApi {
    * </em>
    */
   public createContentEvents(id: any, data: any = {}, customHeaders?: Function): Observable<any> {
-    let _method: string = "POST";
-    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/Domains/:id/contentEvents";
+    let _method: string = 'POST'
+    let _url: string = LoopBackConfig.getPath() + '/' + LoopBackConfig.getApiVersion() + '/Domains/:id/contentEvents'
     let _routeParams: any = {
-      id: id
-    };
+      id: id,
+    }
     let _postBody: any = {
-      data: data
-    };
-    let _urlParams: any = {};
-    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
-    return result;
+      data: data,
+    }
+    let _urlParams: any = {}
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders)
+    return result
   }
 
   /**
@@ -580,16 +569,15 @@ export class SystemDomainApi extends BaseLoopBackApi {
    * This method returns no data.
    */
   public deleteContentEvents(id: any, customHeaders?: Function): Observable<any> {
-    let _method: string = "DELETE";
-    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/Domains/:id/contentEvents";
+    let _method: string = 'DELETE'
+    let _url: string = LoopBackConfig.getPath() + '/' + LoopBackConfig.getApiVersion() + '/Domains/:id/contentEvents'
     let _routeParams: any = {
-      id: id
-    };
-    let _postBody: any = {};
-    let _urlParams: any = {};
-    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
-    return result;
+      id: id,
+    }
+    let _postBody: any = {}
+    let _urlParams: any = {}
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders)
+    return result
   }
 
   /**
@@ -608,17 +596,17 @@ export class SystemDomainApi extends BaseLoopBackApi {
    *  - `count` – `{number}` - 
    */
   public countContentEvents(id: any, where: any = {}, customHeaders?: Function): Observable<any> {
-    let _method: string = "GET";
-    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/Domains/:id/contentEvents/count";
+    let _method: string = 'GET'
+    let _url: string =
+      LoopBackConfig.getPath() + '/' + LoopBackConfig.getApiVersion() + '/Domains/:id/contentEvents/count'
     let _routeParams: any = {
-      id: id
-    };
-    let _postBody: any = {};
-    let _urlParams: any = {};
-    if (typeof where !== 'undefined' && where !== null) _urlParams.where = where;
-    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
-    return result;
+      id: id,
+    }
+    let _postBody: any = {}
+    let _urlParams: any = {}
+    if (typeof where !== 'undefined' && where !== null) _urlParams.where = where
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders)
+    return result
   }
 
   /**
@@ -638,17 +626,16 @@ export class SystemDomainApi extends BaseLoopBackApi {
    * </em>
    */
   public getContentPages(id: any, filter: LoopBackFilter = {}, customHeaders?: Function): Observable<any> {
-    let _method: string = "GET";
-    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/Domains/:id/contentPages";
+    let _method: string = 'GET'
+    let _url: string = LoopBackConfig.getPath() + '/' + LoopBackConfig.getApiVersion() + '/Domains/:id/contentPages'
     let _routeParams: any = {
-      id: id
-    };
-    let _postBody: any = {};
-    let _urlParams: any = {};
-    if (typeof filter !== 'undefined' && filter !== null) _urlParams.filter = filter;
-    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
-    return result;
+      id: id,
+    }
+    let _postBody: any = {}
+    let _urlParams: any = {}
+    if (typeof filter !== 'undefined' && filter !== null) _urlParams.filter = filter
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders)
+    return result
   }
 
   /**
@@ -670,18 +657,17 @@ export class SystemDomainApi extends BaseLoopBackApi {
    * </em>
    */
   public createContentPages(id: any, data: any = {}, customHeaders?: Function): Observable<any> {
-    let _method: string = "POST";
-    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/Domains/:id/contentPages";
+    let _method: string = 'POST'
+    let _url: string = LoopBackConfig.getPath() + '/' + LoopBackConfig.getApiVersion() + '/Domains/:id/contentPages'
     let _routeParams: any = {
-      id: id
-    };
+      id: id,
+    }
     let _postBody: any = {
-      data: data
-    };
-    let _urlParams: any = {};
-    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
-    return result;
+      data: data,
+    }
+    let _urlParams: any = {}
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders)
+    return result
   }
 
   /**
@@ -696,16 +682,15 @@ export class SystemDomainApi extends BaseLoopBackApi {
    * This method returns no data.
    */
   public deleteContentPages(id: any, customHeaders?: Function): Observable<any> {
-    let _method: string = "DELETE";
-    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/Domains/:id/contentPages";
+    let _method: string = 'DELETE'
+    let _url: string = LoopBackConfig.getPath() + '/' + LoopBackConfig.getApiVersion() + '/Domains/:id/contentPages'
     let _routeParams: any = {
-      id: id
-    };
-    let _postBody: any = {};
-    let _urlParams: any = {};
-    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
-    return result;
+      id: id,
+    }
+    let _postBody: any = {}
+    let _urlParams: any = {}
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders)
+    return result
   }
 
   /**
@@ -724,17 +709,17 @@ export class SystemDomainApi extends BaseLoopBackApi {
    *  - `count` – `{number}` - 
    */
   public countContentPages(id: any, where: any = {}, customHeaders?: Function): Observable<any> {
-    let _method: string = "GET";
-    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/Domains/:id/contentPages/count";
+    let _method: string = 'GET'
+    let _url: string =
+      LoopBackConfig.getPath() + '/' + LoopBackConfig.getApiVersion() + '/Domains/:id/contentPages/count'
     let _routeParams: any = {
-      id: id
-    };
-    let _postBody: any = {};
-    let _urlParams: any = {};
-    if (typeof where !== 'undefined' && where !== null) _urlParams.where = where;
-    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
-    return result;
+      id: id,
+    }
+    let _postBody: any = {}
+    let _urlParams: any = {}
+    if (typeof where !== 'undefined' && where !== null) _urlParams.where = where
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders)
+    return result
   }
 
   /**
@@ -754,17 +739,16 @@ export class SystemDomainApi extends BaseLoopBackApi {
    * </em>
    */
   public getContentProducts(id: any, filter: LoopBackFilter = {}, customHeaders?: Function): Observable<any> {
-    let _method: string = "GET";
-    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/Domains/:id/contentProducts";
+    let _method: string = 'GET'
+    let _url: string = LoopBackConfig.getPath() + '/' + LoopBackConfig.getApiVersion() + '/Domains/:id/contentProducts'
     let _routeParams: any = {
-      id: id
-    };
-    let _postBody: any = {};
-    let _urlParams: any = {};
-    if (typeof filter !== 'undefined' && filter !== null) _urlParams.filter = filter;
-    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
-    return result;
+      id: id,
+    }
+    let _postBody: any = {}
+    let _urlParams: any = {}
+    if (typeof filter !== 'undefined' && filter !== null) _urlParams.filter = filter
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders)
+    return result
   }
 
   /**
@@ -786,18 +770,17 @@ export class SystemDomainApi extends BaseLoopBackApi {
    * </em>
    */
   public createContentProducts(id: any, data: any = {}, customHeaders?: Function): Observable<any> {
-    let _method: string = "POST";
-    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/Domains/:id/contentProducts";
+    let _method: string = 'POST'
+    let _url: string = LoopBackConfig.getPath() + '/' + LoopBackConfig.getApiVersion() + '/Domains/:id/contentProducts'
     let _routeParams: any = {
-      id: id
-    };
+      id: id,
+    }
     let _postBody: any = {
-      data: data
-    };
-    let _urlParams: any = {};
-    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
-    return result;
+      data: data,
+    }
+    let _urlParams: any = {}
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders)
+    return result
   }
 
   /**
@@ -812,16 +795,15 @@ export class SystemDomainApi extends BaseLoopBackApi {
    * This method returns no data.
    */
   public deleteContentProducts(id: any, customHeaders?: Function): Observable<any> {
-    let _method: string = "DELETE";
-    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/Domains/:id/contentProducts";
+    let _method: string = 'DELETE'
+    let _url: string = LoopBackConfig.getPath() + '/' + LoopBackConfig.getApiVersion() + '/Domains/:id/contentProducts'
     let _routeParams: any = {
-      id: id
-    };
-    let _postBody: any = {};
-    let _urlParams: any = {};
-    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
-    return result;
+      id: id,
+    }
+    let _postBody: any = {}
+    let _urlParams: any = {}
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders)
+    return result
   }
 
   /**
@@ -840,17 +822,17 @@ export class SystemDomainApi extends BaseLoopBackApi {
    *  - `count` – `{number}` - 
    */
   public countContentProducts(id: any, where: any = {}, customHeaders?: Function): Observable<any> {
-    let _method: string = "GET";
-    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/Domains/:id/contentProducts/count";
+    let _method: string = 'GET'
+    let _url: string =
+      LoopBackConfig.getPath() + '/' + LoopBackConfig.getApiVersion() + '/Domains/:id/contentProducts/count'
     let _routeParams: any = {
-      id: id
-    };
-    let _postBody: any = {};
-    let _urlParams: any = {};
-    if (typeof where !== 'undefined' && where !== null) _urlParams.where = where;
-    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
-    return result;
+      id: id,
+    }
+    let _postBody: any = {}
+    let _urlParams: any = {}
+    if (typeof where !== 'undefined' && where !== null) _urlParams.where = where
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders)
+    return result
   }
 
   /**
@@ -870,17 +852,16 @@ export class SystemDomainApi extends BaseLoopBackApi {
    * </em>
    */
   public getContentPosts(id: any, filter: LoopBackFilter = {}, customHeaders?: Function): Observable<any> {
-    let _method: string = "GET";
-    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/Domains/:id/contentPosts";
+    let _method: string = 'GET'
+    let _url: string = LoopBackConfig.getPath() + '/' + LoopBackConfig.getApiVersion() + '/Domains/:id/contentPosts'
     let _routeParams: any = {
-      id: id
-    };
-    let _postBody: any = {};
-    let _urlParams: any = {};
-    if (typeof filter !== 'undefined' && filter !== null) _urlParams.filter = filter;
-    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
-    return result;
+      id: id,
+    }
+    let _postBody: any = {}
+    let _urlParams: any = {}
+    if (typeof filter !== 'undefined' && filter !== null) _urlParams.filter = filter
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders)
+    return result
   }
 
   /**
@@ -902,18 +883,17 @@ export class SystemDomainApi extends BaseLoopBackApi {
    * </em>
    */
   public createContentPosts(id: any, data: any = {}, customHeaders?: Function): Observable<any> {
-    let _method: string = "POST";
-    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/Domains/:id/contentPosts";
+    let _method: string = 'POST'
+    let _url: string = LoopBackConfig.getPath() + '/' + LoopBackConfig.getApiVersion() + '/Domains/:id/contentPosts'
     let _routeParams: any = {
-      id: id
-    };
+      id: id,
+    }
     let _postBody: any = {
-      data: data
-    };
-    let _urlParams: any = {};
-    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
-    return result;
+      data: data,
+    }
+    let _urlParams: any = {}
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders)
+    return result
   }
 
   /**
@@ -928,16 +908,15 @@ export class SystemDomainApi extends BaseLoopBackApi {
    * This method returns no data.
    */
   public deleteContentPosts(id: any, customHeaders?: Function): Observable<any> {
-    let _method: string = "DELETE";
-    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/Domains/:id/contentPosts";
+    let _method: string = 'DELETE'
+    let _url: string = LoopBackConfig.getPath() + '/' + LoopBackConfig.getApiVersion() + '/Domains/:id/contentPosts'
     let _routeParams: any = {
-      id: id
-    };
-    let _postBody: any = {};
-    let _urlParams: any = {};
-    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
-    return result;
+      id: id,
+    }
+    let _postBody: any = {}
+    let _urlParams: any = {}
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders)
+    return result
   }
 
   /**
@@ -956,17 +935,17 @@ export class SystemDomainApi extends BaseLoopBackApi {
    *  - `count` – `{number}` - 
    */
   public countContentPosts(id: any, where: any = {}, customHeaders?: Function): Observable<any> {
-    let _method: string = "GET";
-    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/Domains/:id/contentPosts/count";
+    let _method: string = 'GET'
+    let _url: string =
+      LoopBackConfig.getPath() + '/' + LoopBackConfig.getApiVersion() + '/Domains/:id/contentPosts/count'
     let _routeParams: any = {
-      id: id
-    };
-    let _postBody: any = {};
-    let _urlParams: any = {};
-    if (typeof where !== 'undefined' && where !== null) _urlParams.where = where;
-    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
-    return result;
+      id: id,
+    }
+    let _postBody: any = {}
+    let _urlParams: any = {}
+    if (typeof where !== 'undefined' && where !== null) _urlParams.where = where
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders)
+    return result
   }
 
   /**
@@ -986,17 +965,16 @@ export class SystemDomainApi extends BaseLoopBackApi {
    * </em>
    */
   public getStorageFiles(id: any, filter: LoopBackFilter = {}, customHeaders?: Function): Observable<any> {
-    let _method: string = "GET";
-    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/Domains/:id/storageFiles";
+    let _method: string = 'GET'
+    let _url: string = LoopBackConfig.getPath() + '/' + LoopBackConfig.getApiVersion() + '/Domains/:id/storageFiles'
     let _routeParams: any = {
-      id: id
-    };
-    let _postBody: any = {};
-    let _urlParams: any = {};
-    if (typeof filter !== 'undefined' && filter !== null) _urlParams.filter = filter;
-    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
-    return result;
+      id: id,
+    }
+    let _postBody: any = {}
+    let _urlParams: any = {}
+    if (typeof filter !== 'undefined' && filter !== null) _urlParams.filter = filter
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders)
+    return result
   }
 
   /**
@@ -1018,18 +996,17 @@ export class SystemDomainApi extends BaseLoopBackApi {
    * </em>
    */
   public createStorageFiles(id: any, data: any = {}, customHeaders?: Function): Observable<any> {
-    let _method: string = "POST";
-    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/Domains/:id/storageFiles";
+    let _method: string = 'POST'
+    let _url: string = LoopBackConfig.getPath() + '/' + LoopBackConfig.getApiVersion() + '/Domains/:id/storageFiles'
     let _routeParams: any = {
-      id: id
-    };
+      id: id,
+    }
     let _postBody: any = {
-      data: data
-    };
-    let _urlParams: any = {};
-    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
-    return result;
+      data: data,
+    }
+    let _urlParams: any = {}
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders)
+    return result
   }
 
   /**
@@ -1044,16 +1021,15 @@ export class SystemDomainApi extends BaseLoopBackApi {
    * This method returns no data.
    */
   public deleteStorageFiles(id: any, customHeaders?: Function): Observable<any> {
-    let _method: string = "DELETE";
-    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/Domains/:id/storageFiles";
+    let _method: string = 'DELETE'
+    let _url: string = LoopBackConfig.getPath() + '/' + LoopBackConfig.getApiVersion() + '/Domains/:id/storageFiles'
     let _routeParams: any = {
-      id: id
-    };
-    let _postBody: any = {};
-    let _urlParams: any = {};
-    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
-    return result;
+      id: id,
+    }
+    let _postBody: any = {}
+    let _urlParams: any = {}
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders)
+    return result
   }
 
   /**
@@ -1072,17 +1048,17 @@ export class SystemDomainApi extends BaseLoopBackApi {
    *  - `count` – `{number}` - 
    */
   public countStorageFiles(id: any, where: any = {}, customHeaders?: Function): Observable<any> {
-    let _method: string = "GET";
-    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/Domains/:id/storageFiles/count";
+    let _method: string = 'GET'
+    let _url: string =
+      LoopBackConfig.getPath() + '/' + LoopBackConfig.getApiVersion() + '/Domains/:id/storageFiles/count'
     let _routeParams: any = {
-      id: id
-    };
-    let _postBody: any = {};
-    let _urlParams: any = {};
-    if (typeof where !== 'undefined' && where !== null) _urlParams.where = where;
-    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
-    return result;
+      id: id,
+    }
+    let _postBody: any = {}
+    let _urlParams: any = {}
+    if (typeof where !== 'undefined' && where !== null) _urlParams.where = where
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders)
+    return result
   }
 
   /**
@@ -1102,16 +1078,15 @@ export class SystemDomainApi extends BaseLoopBackApi {
    * </em>
    */
   public patchOrCreate(data: any = {}, customHeaders?: Function): Observable<any> {
-    let _method: string = "PATCH";
-    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/Domains";
-    let _routeParams: any = {};
+    let _method: string = 'PATCH'
+    let _url: string = LoopBackConfig.getPath() + '/' + LoopBackConfig.getApiVersion() + '/Domains'
+    let _routeParams: any = {}
     let _postBody: any = {
-      data: data
-    };
-    let _urlParams: any = {};
-    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
-    return result;
+      data: data,
+    }
+    let _urlParams: any = {}
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders)
+    return result
   }
 
   /**
@@ -1133,18 +1108,17 @@ export class SystemDomainApi extends BaseLoopBackApi {
    * </em>
    */
   public patchAttributes(id: any, data: any = {}, customHeaders?: Function): Observable<any> {
-    let _method: string = "PATCH";
-    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/Domains/:id";
+    let _method: string = 'PATCH'
+    let _url: string = LoopBackConfig.getPath() + '/' + LoopBackConfig.getApiVersion() + '/Domains/:id'
     let _routeParams: any = {
-      id: id
-    };
+      id: id,
+    }
     let _postBody: any = {
-      data: data
-    };
-    let _urlParams: any = {};
-    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
-    return result;
+      data: data,
+    }
+    let _urlParams: any = {}
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders)
+    return result
   }
 
   /**
@@ -1168,18 +1142,17 @@ export class SystemDomainApi extends BaseLoopBackApi {
    * </em>
    */
   public importFileByUrl(id: any, url: any, fileName: any = {}, customHeaders?: Function): Observable<any> {
-    let _method: string = "POST";
-    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/Domains/:id/importFileByUrl";
+    let _method: string = 'POST'
+    let _url: string = LoopBackConfig.getPath() + '/' + LoopBackConfig.getApiVersion() + '/Domains/:id/importFileByUrl'
     let _routeParams: any = {
-      id: id
-    };
-    let _postBody: any = {};
-    let _urlParams: any = {};
-    if (typeof url !== 'undefined' && url !== null) _urlParams.url = url;
-    if (typeof fileName !== 'undefined' && fileName !== null) _urlParams.fileName = fileName;
-    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
-    return result;
+      id: id,
+    }
+    let _postBody: any = {}
+    let _urlParams: any = {}
+    if (typeof url !== 'undefined' && url !== null) _urlParams.url = url
+    if (typeof fileName !== 'undefined' && fileName !== null) _urlParams.fileName = fileName
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders)
+    return result
   }
 
   /**
@@ -1201,18 +1174,17 @@ export class SystemDomainApi extends BaseLoopBackApi {
    * </em>
    */
   public createManyContentEvents(id: any, data: any[] = [], customHeaders?: Function): Observable<any> {
-    let _method: string = "POST";
-    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/Domains/:id/contentEvents";
+    let _method: string = 'POST'
+    let _url: string = LoopBackConfig.getPath() + '/' + LoopBackConfig.getApiVersion() + '/Domains/:id/contentEvents'
     let _routeParams: any = {
-      id: id
-    };
+      id: id,
+    }
     let _postBody: any = {
-      data: data
-    };
-    let _urlParams: any = {};
-    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
-    return result;
+      data: data,
+    }
+    let _urlParams: any = {}
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders)
+    return result
   }
 
   /**
@@ -1234,18 +1206,17 @@ export class SystemDomainApi extends BaseLoopBackApi {
    * </em>
    */
   public createManyContentPages(id: any, data: any[] = [], customHeaders?: Function): Observable<any> {
-    let _method: string = "POST";
-    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/Domains/:id/contentPages";
+    let _method: string = 'POST'
+    let _url: string = LoopBackConfig.getPath() + '/' + LoopBackConfig.getApiVersion() + '/Domains/:id/contentPages'
     let _routeParams: any = {
-      id: id
-    };
+      id: id,
+    }
     let _postBody: any = {
-      data: data
-    };
-    let _urlParams: any = {};
-    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
-    return result;
+      data: data,
+    }
+    let _urlParams: any = {}
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders)
+    return result
   }
 
   /**
@@ -1267,18 +1238,17 @@ export class SystemDomainApi extends BaseLoopBackApi {
    * </em>
    */
   public createManyContentProducts(id: any, data: any[] = [], customHeaders?: Function): Observable<any> {
-    let _method: string = "POST";
-    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/Domains/:id/contentProducts";
+    let _method: string = 'POST'
+    let _url: string = LoopBackConfig.getPath() + '/' + LoopBackConfig.getApiVersion() + '/Domains/:id/contentProducts'
     let _routeParams: any = {
-      id: id
-    };
+      id: id,
+    }
     let _postBody: any = {
-      data: data
-    };
-    let _urlParams: any = {};
-    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
-    return result;
+      data: data,
+    }
+    let _urlParams: any = {}
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders)
+    return result
   }
 
   /**
@@ -1300,18 +1270,17 @@ export class SystemDomainApi extends BaseLoopBackApi {
    * </em>
    */
   public createManyContentPosts(id: any, data: any[] = [], customHeaders?: Function): Observable<any> {
-    let _method: string = "POST";
-    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/Domains/:id/contentPosts";
+    let _method: string = 'POST'
+    let _url: string = LoopBackConfig.getPath() + '/' + LoopBackConfig.getApiVersion() + '/Domains/:id/contentPosts'
     let _routeParams: any = {
-      id: id
-    };
+      id: id,
+    }
     let _postBody: any = {
-      data: data
-    };
-    let _urlParams: any = {};
-    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
-    return result;
+      data: data,
+    }
+    let _urlParams: any = {}
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders)
+    return result
   }
 
   /**
@@ -1333,18 +1302,103 @@ export class SystemDomainApi extends BaseLoopBackApi {
    * </em>
    */
   public createManyStorageFiles(id: any, data: any[] = [], customHeaders?: Function): Observable<any> {
-    let _method: string = "POST";
-    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/Domains/:id/storageFiles";
+    let _method: string = 'POST'
+    let _url: string = LoopBackConfig.getPath() + '/' + LoopBackConfig.getApiVersion() + '/Domains/:id/storageFiles'
     let _routeParams: any = {
-      id: id
-    };
+      id: id,
+    }
     let _postBody: any = {
-      data: data
-    };
-    let _urlParams: any = {};
-    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
-    return result;
+      data: data,
+    }
+    let _urlParams: any = {}
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders)
+    return result
+  }
+
+  /**
+   * start
+   */
+
+  public findByIdContentPlans(id: any, fk: any, customHeaders?: Function): Observable<any> {
+    let _method: string = 'GET'
+    let _url: string = LoopBackConfig.getPath() + '/' + LoopBackConfig.getApiVersion() + '/Domains/:id/contentPlans/:fk'
+    let _routeParams: any = {
+      id: id,
+      fk: fk,
+    }
+    let _postBody: any = {}
+    let _urlParams: any = {}
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders)
+    return result
+  }
+
+  public getContentPlans(id: any, filter: LoopBackFilter = {}, customHeaders?: Function): Observable<any> {
+    let _method: string = 'GET'
+    let _url: string = LoopBackConfig.getPath() + '/' + LoopBackConfig.getApiVersion() + '/Domains/:id/contentPlans'
+    let _routeParams: any = {
+      id: id,
+    }
+    let _postBody: any = {}
+    let _urlParams: any = {}
+    if (typeof filter !== 'undefined' && filter !== null) _urlParams.filter = filter
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders)
+    return result
+  }
+
+  public countContentPlans(id: any, where: any = {}, customHeaders?: Function): Observable<any> {
+    let _method: string = 'GET'
+    let _url: string =
+      LoopBackConfig.getPath() + '/' + LoopBackConfig.getApiVersion() + '/Domains/:id/contentPlans/count'
+    let _routeParams: any = {
+      id: id,
+    }
+    let _postBody: any = {}
+    let _urlParams: any = {}
+    if (typeof where !== 'undefined' && where !== null) _urlParams.where = where
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders)
+    return result
+  }
+
+  public updateByIdContentPlans(id: any, fk: any, data: any = {}, customHeaders?: Function): Observable<any> {
+    let _method: string = 'PUT'
+    let _url: string = LoopBackConfig.getPath() + '/' + LoopBackConfig.getApiVersion() + '/Domains/:id/contentPlans/:fk'
+    let _routeParams: any = {
+      id: id,
+      fk: fk,
+    }
+    let _postBody: any = {
+      data: data,
+    }
+    let _urlParams: any = {}
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders)
+    return result
+  }
+
+  public createContentPlans(id: any, data: any = {}, customHeaders?: Function): Observable<any> {
+    let _method: string = 'POST'
+    let _url: string = LoopBackConfig.getPath() + '/' + LoopBackConfig.getApiVersion() + '/Domains/:id/contentPlans'
+    let _routeParams: any = {
+      id: id,
+    }
+    let _postBody: any = {
+      data: data,
+    }
+    let _urlParams: any = {}
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders)
+    return result
+  }
+
+  public destroyByIdContentPlans(id: any, fk: any, customHeaders?: Function): Observable<any> {
+    let _method: string = 'DELETE'
+    let _url: string = LoopBackConfig.getPath() + '/' + LoopBackConfig.getApiVersion() + '/Domains/:id/contentPlans/:fk'
+    let _routeParams: any = {
+      id: id,
+      fk: fk,
+    }
+    let _postBody: any = {}
+    let _urlParams: any = {}
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders)
+    return result
   }
 
   /**
@@ -1352,6 +1406,6 @@ export class SystemDomainApi extends BaseLoopBackApi {
    * i.e. `SystemDomain`.
    */
   public getModelName() {
-    return "SystemDomain";
+    return 'SystemDomain'
   }
 }
