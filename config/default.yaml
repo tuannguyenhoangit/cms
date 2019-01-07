@@ -1,12 +1,12 @@
 api:
   # Do not use trailing spaces for the baseUrl
-  baseUrl: https://frozen-taiga-40327.herokuapp.com:3000
+  baseUrl: http://127.0.0.1:3000
   host: 127.0.0.1
   port: 3000
   version: api/v1
 
 admin:
-  url: https://frozen-taiga-40327.herokuapp.com:9000
+  url: http://127.0.0.1:9000
   recoverPath: /#/password-reset
 
 colmena:
@@ -19,19 +19,18 @@ colmena:
 hideBootWarning: false
 
 mongodb:
-  url: mongodb://localhost/colmena-dev
-
+  url: mongodb://admin:ojAQSWXQRPT6slk6@cluster0-shard-00-00-qezsn.mongodb.net:27017,cluster0-shard-00-01-qezsn.mongodb.net:27017,cluster0-shard-00-02-qezsn.mongodb.net:27017/cms?ssl=true&replicaSet=Cluster0-shard-0&authSource=admin&retryWrites=true
 
 settings:
   registrationEnabled: true
 
 smtp:
-  host: localhost
-  port: 102
+  host: false
+  port: false
 
 storage:
   path: './storage'
 
 system:
-  initdb: true
+  initdb: false
   migratedb: false
