@@ -16,6 +16,7 @@
     "ngx-bootstrap": "1.9.1",
     "ngx-quill": "1.4.0",
     "node-sass": "4.11.0",
+    "path": "0.12.7",
     "simple-line-icons": "2.4.1"
   }
 }

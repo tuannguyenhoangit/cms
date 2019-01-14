@@ -58,6 +58,7 @@
     "debug": "3.0.1",
     "ngx-quill": "1.4.0",
     "parent-require": "1.0.0",
+    "path": "0.12.7",
     "ts-node": "3.3.0"
   },
   "devDependencies": {

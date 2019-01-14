@@ -19,7 +19,8 @@ colmena:
 hideBootWarning: false
 
 mongodb:
-  url: mongodb://admin:ojAQSWXQRPT6slk6@cluster0-shard-00-00-qezsn.mongodb.net:27017,cluster0-shard-00-01-qezsn.mongodb.net:27017,cluster0-shard-00-02-qezsn.mongodb.net:27017/cms?ssl=true&replicaSet=Cluster0-shard-0&authSource=admin&retryWrites=true
+  # url: mongodb://admin:ojAQSWXQRPT6slk6@cluster0-shard-00-00-qezsn.mongodb.net:27017,cluster0-shard-00-01-qezsn.mongodb.net:27017,cluster0-shard-00-02-qezsn.mongodb.net:27017/cms?ssl=true&replicaSet=Cluster0-shard-0&authSource=admin&retryWrites=true
+  url: mongodb://admin:password@103.1.237.204:27017/cms?ssl=true&authSource=admin&retryWrites=true
 
 settings:
   registrationEnabled: true
@@ -32,5 +33,5 @@ storage:
   path: './storage'
 
 system:
-  initdb: false
+  initdb: true
   migratedb: false
